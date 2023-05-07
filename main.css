@@ -1,0 +1,26 @@
+.centerText {
+	text-align: center;
+}
+
+#main {
+	width: 25%;
+	height: 50%;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+#buttonDiv {
+	text-align: center;
+}
+
+#retryButton {
+	visibility: hidden;
+}
+
+#credits {
+	font-weight: strong;
+}
