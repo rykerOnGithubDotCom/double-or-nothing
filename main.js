@@ -19,7 +19,7 @@ var roll = function() {
 	if (rolls == 1) { // First rolls, just give it to the player
 		rollResult = 1;
 	}
-	else if (credits > 16) {
+	else if (credits >= 16) {
 		rollResult = Math.floor(Math.random() * 2);
 	} else {
 		rollResult = Math.floor(Math.random() * 3);
@@ -30,6 +30,7 @@ var roll = function() {
 	creditsEl = document.getElementById("credits");
 	
 	spinButtonEl.disabled = true;
+	resultEl.style.color = "black";
 	
 	setTimeout(rollThink, 50);
 }
@@ -53,6 +54,7 @@ var rollThink = function() {
 		} else {
 			resultEl.innerText = "Nothing";
 			retryButtonEl.style.visibility = "visible";
+			resultEl.style.color = "red";
 			credits = 0;
 		}
 		updateCredits();
@@ -64,7 +66,9 @@ var rollThink = function() {
 
 var retry = function() {
 	rollTick = 0;
+	rolls = 0;
 	resultEl.innerText = "Press the button below to spin";
+	resultEl.style.color = "black";
 	credits = 1;
 	updateCredits();
 	spinButtonEl.disabled = false;
